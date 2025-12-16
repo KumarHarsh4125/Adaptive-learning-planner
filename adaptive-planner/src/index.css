@@ -1,0 +1,33 @@
+@import "tailwindcss";
+/* Calendar base */
+.custom-calendar {
+  border: none;
+  font-family: inherit;
+}
+
+/* Remove default borders */
+.custom-calendar .react-calendar__tile {
+  border-radius: 12px;
+  padding: 10px 0;
+}
+
+/* Selected day */
+.custom-calendar .react-calendar__tile--active {
+  background: #7c3aed !important;
+  color: white;
+}
+
+/* Hover */
+.custom-calendar .react-calendar__tile:hover {
+  background: #ede9fe;
+}
+
+/* Today */
+.custom-calendar .react-calendar__tile--now {
+  background: #f5f3ff;
+}
+
+/* Month navigation */
+.custom-calendar .react-calendar__navigation button {
+  font-weight: 600;
+}
