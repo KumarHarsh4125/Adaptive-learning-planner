@@ -2,15 +2,19 @@ import Timeline from "../components/Timeline";
 
 function Planner() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-2">
-        Your Adaptive Study Plan
-      </h1>
-      <p className="text-gray-600 mb-6">
-        Follow the plan step by step to complete today’s learning.
-      </p>
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-semibold text-gray-900">
+          Your Adaptive Study Plan
+        </h1>
+        <p className="text-gray-600 mt-2 text-base">
+          Follow the plan step by step to complete today’s learning.
+        </p>
+      </div>
 
-      <Timeline />
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <Timeline />
+      </div>
     </div>
   );
 }

@@ -1,33 +1,45 @@
 @import "tailwindcss";
-/* Calendar base */
+
+/* ---------------- GLOBAL BASE ---------------- */
+@layer base {
+  body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+}
+
+/* ---------------- CALENDAR THEME ---------------- */
 .custom-calendar {
   border: none;
   font-family: inherit;
 }
 
-/* Remove default borders */
+/* Day tiles */
 .custom-calendar .react-calendar__tile {
   border-radius: 12px;
   padding: 10px 0;
 }
 
-/* Selected day */
+/* Selected day (new theme color) */
 .custom-calendar .react-calendar__tile--active {
-  background: #7c3aed !important;
+  background: #0f766e !important; /* teal */
   color: white;
 }
 
 /* Hover */
 .custom-calendar .react-calendar__tile:hover {
-  background: #ede9fe;
+  background: #e6f4f1;
 }
 
 /* Today */
 .custom-calendar .react-calendar__tile--now {
-  background: #f5f3ff;
+  background: #f0fdfa;
 }
 
 /* Month navigation */
 .custom-calendar .react-calendar__navigation button {
-  font-weight: 600;
+  font-weight: 500;
+  color: #0f172a;
 }

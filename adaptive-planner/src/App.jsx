@@ -4,6 +4,10 @@ import Dashboard from "./pages/Dashboard";
 import Planner from "./pages/Planner";
 import Pagelayout from "./layout/Pagelayout";
 import Calendarpage from "./pages/Calender";
+import Home from "./pages/Home";
+import VideoPage from "./pages/VideoPage";
+import NotesPage from "./pages/NotesPage";
+import QuizPage from "./pages/QuizPage";
 
 function App() {
   return (
@@ -11,15 +15,18 @@ function App() {
       <Routes>
         {/* Layout with Sidebar */}
         <Route element={<Pagelayout />}>
-          {/* Redirect root to dashboard */}
           <Route path="/" element={<Navigate to="/dashboard" />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/planner" element={<Planner />} />
-          <Route path="/calendar" element={<Calendarpage/>} />
+          <Route path="/calendar" element={<Calendarpage />} />
+          <Route path="/video" element={<VideoPage />} />
+          <Route path="/notes" element={<NotesPage />} />
+          <Route path="/quiz" element={<QuizPage />} />
         </Route>
 
-        {/* Fallback for unknown routes */}
+        <Route path="/home" element={<Home />} />
+
         <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
     </BrowserRouter>

@@ -11,22 +11,28 @@ function TaskCard({
 }) {
   return (
     <div
-      className={`bg-white p-4 rounded-lg shadow flex justify-between items-center ${
-        disabled ? "opacity-50" : ""
-      }`}
+      className={`p-5 rounded-xl border shadow-sm flex justify-between items-center
+        ${
+          disabled
+            ? "bg-teal-50 opacity-50"
+            : "bg-teal-50 border-teal-100"
+        }`}
     >
       <div>
         <p className="text-sm text-gray-500">{time}</p>
-        <h3 className="font-semibold">{title}</h3>
-        <p className="text-sm mt-1">
+        <h3 className="text-lg font-semibold text-gray-900 mt-1">
+          {title}
+        </h3>
+
+        <p className="text-sm mt-2">
           Status:{" "}
           <span
             className={`font-medium ${
               status === "Completed"
-                ? "text-green-600"
+                ? "text-teal-700"
                 : status === "Missed"
                 ? "text-red-600"
-                : "text-blue-600"
+                : "text-teal-600"
             }`}
           >
             {status}
@@ -34,15 +40,16 @@ function TaskCard({
         </p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 items-end">
         <Link
           to={disabled ? "#" : link}
-          className={`px-4 py-2 rounded text-center ${
-            disabled
-              ? "bg-gray-400 text-white cursor-not-allowed"
-              : "bg-blue-500 text-white hover:bg-blue-600"
-          }`}
           onClick={(e) => disabled && e.preventDefault()}
+          className={`px-5 py-2 rounded-lg text-sm font-medium transition text-center
+            ${
+              disabled
+                ? "bg-gray-300 text-white cursor-not-allowed"
+                : "bg-teal-600 text-white hover:bg-teal-700"
+            }`}
         >
           {action}
         </Link>
@@ -50,7 +57,7 @@ function TaskCard({
         {status === "Pending" && !disabled && (
           <button
             onClick={onComplete}
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="bg-teal-500 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-teal-600 transition"
           >
             Mark as Done
           </button>
