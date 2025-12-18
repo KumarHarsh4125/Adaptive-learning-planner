@@ -94,15 +94,26 @@ function Timeline() {
     .some((t) => t.status === "Completed");
 
   return (
-    <div className="mt-8 space-y-4">
-      {tasks.map((task) => (
-        <TaskCard
-          key={task.id}
-          {...task}
-          disabled={task.title === "Take Quiz" && !isQuizUnlocked}
-          onComplete={() => markAsDone(task.id)}
-        />
-      ))}
+    <div className="mt-8 relative">
+      <div className="absolute left-[1.20rem] top-0 bottom-0 w-0.5 bg-gray-100 z-0 hidden"></div>
+      {/* Note: The vertical line is now handled per-card for better control, but a background line could be added here if needed for continuous look */}
+
+      <div className="space-y-0">
+        {tasks.map((task, index) => (
+          <div
+            key={task.id}
+            className="animate-fade-in-up"
+            style={{ animationDelay: `${index * 150}ms` }}
+          >
+            <TaskCard
+              {...task}
+              disabled={task.title === "Take Quiz" && !isQuizUnlocked}
+              onComplete={() => markAsDone(task.id)}
+              isLast={index === tasks.length - 1}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
