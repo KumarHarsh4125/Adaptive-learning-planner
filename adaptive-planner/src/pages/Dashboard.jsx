@@ -4,7 +4,7 @@ import { Zap, Calendar, ArrowRight, BarChart2, Clock, CheckCircle, Sparkles } fr
 function Dashboard() {
   const navigate = useNavigate();
 
-  // Mock stats - in a real app these would come from props or context
+  // Mock stats 
   const stats = [
     { icon: <Zap className="w-5 h-5 text-amber-500" />, label: "Day Streak", value: "3", bg: "bg-amber-50 border-amber-100" },
     { icon: <CheckCircle className="w-5 h-5 text-teal-500" />, label: "Completed", value: "12", bg: "bg-teal-50 border-teal-100" },
